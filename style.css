@@ -1,0 +1,494 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.leasing-hero {
+  position: relative;
+
+  width: 100%;
+  height: 530px;
+
+  background-image: url("./img/BMWpicture1.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+
+/* Slight dark overlay */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.15);
+
+  z-index: 1;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.hero-header {
+  position: relative;
+  z-index: 10;
+
+  width: 63%;
+  max-width: 610px;
+
+  margin: 0 auto;
+
+  padding-top: 19px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  width: 48px;
+
+  display: block;
+}
+
+.logo img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.hero-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 23px;
+
+  padding-top: 18px;
+}
+
+.hero-nav a {
+  position: relative;
+
+  color: #ffffff;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.hero-nav a:hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 77px;
+
+  text-align: center;
+}
+
+
+/* Main title */
+
+.hero-content h1 {
+  color: #ffffff;
+
+  font-size: 49px;
+  line-height: 1;
+
+  font-weight: 700;
+
+  margin-bottom: 22px;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.find-car-btn {
+  width: 213px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #171717;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.find-car-btn:hover {
+  background: #ffffff;
+  color: #171717;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   SLIDER INDICATORS
+========================= */
+
+.hero-slider {
+  position: absolute;
+
+  z-index: 10;
+
+  left: 50%;
+  bottom: 41px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.slider-line {
+  display: block;
+
+  width: 59px;
+  height: 2px;
+
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.slider-line.active {
+  background: #ffffff;
+  height: 3px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .hero-header {
+    width: 90%;
+  }
+
+  .hero-nav {
+    gap: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .leasing-hero {
+    height: 520px;
+
+    background-position: 60% center;
+  }
+
+  .hero-header {
+    width: 90%;
+
+    align-items: center;
+  }
+
+  .hero-nav {
+    display: none;
+  }
+
+  .logo {
+    width: 50px;
+  }
+
+  .hero-content {
+    margin-top: 100px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+
+    margin-bottom: 25px;
+  }
+
+  .find-car-btn {
+    width: 200px;
+    height: 46px;
+
+    font-size: 16px;
+  }
+
+  .hero-slider {
+    bottom: 30px;
+
+    gap: 10px;
+  }
+
+  .slider-line {
+    width: 45px;
+  }
+
+}
+
+
+@media (max-width: 450px) {
+
+  .leasing-hero {
+    height: 500px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .find-car-btn {
+    width: 185px;
+  }
+
+  .slider-line {
+    width: 35px;
+  }
+
+}
+/* =========================
+   WHY LEASE SECTION
+========================= */
+
+.why-lease {
+  width: 100%;
+  background: #ffffff;
+
+  padding: 95px 40px 20px;
+}
+
+.why-lease-container {
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 0 auto;
+}
+
+
+/* Title */
+
+.why-lease h2 {
+  text-align: center;
+
+  color: #181818;
+
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  margin-bottom: 38px;
+}
+
+
+/* Cards row */
+
+.lease-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 55px;
+
+  align-items: start;
+}
+
+
+/* Each card */
+
+.benefit-card {
+  text-align: left;
+}
+
+
+/* Icon circle */
+
+.benefit-icon {
+  width: 116px;
+  height: 116px;
+
+  border: 1.5px solid #0868ff;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 22px;
+}
+
+
+/* Actual icon */
+
+.benefit-icon img {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
+}
+
+
+/* Card title */
+
+.benefit-card h3 {
+  color: #181818;
+
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  text-align: center;
+
+  margin-bottom: 22px;
+
+  white-space: nowrap;
+}
+
+
+/* Description */
+
+.benefit-card p {
+  color: #202020;
+
+  font-size: 13px;
+  line-height: 1.22;
+
+  font-weight: 400;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .why-lease {
+    padding: 70px 30px;
+  }
+
+  .lease-benefits {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 55px 70px;
+  }
+
+  .benefit-card {
+    max-width: 300px;
+
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .why-lease {
+    padding: 55px 25px;
+  }
+
+  .why-lease h2 {
+    font-size: 32px;
+
+    margin-bottom: 40px;
+  }
+
+  .lease-benefits {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .benefit-card {
+    width: 100%;
+    max-width: 320px;
+
+    text-align: center;
+  }
+
+  .benefit-card h3 {
+    white-space: normal;
+
+    margin-bottom: 14px;
+  }
+
+  .benefit-card p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
