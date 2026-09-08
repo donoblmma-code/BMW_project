@@ -2529,3 +2529,720 @@ body {
   opacity: 0.7;
   pointer-events: none;
 }
+/* =========================
+   HERO INTRO ANIMATIONS
+========================= */
+
+/* Entire hero */
+.leasing-hero {
+  position: relative;
+  overflow: hidden;
+
+  animation: heroFadeIn 0.8s ease forwards;
+}
+
+
+/* Dark overlay slowly appears */
+.hero-overlay {
+  opacity: 0;
+
+  animation: overlayFade 1.2s ease 0.1s forwards;
+}
+
+
+/* HEADER */
+
+.hero-header {
+  opacity: 0;
+  transform: translateY(-25px);
+
+  animation: headerSlideDown 0.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.2s forwards;
+}
+
+
+/* LOGO */
+
+.logo {
+  display: block;
+
+  opacity: 0;
+  transform: translateY(-15px) scale(0.95);
+
+  animation: logoReveal 0.7s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.4s forwards;
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.06);
+  opacity: 0.85;
+}
+
+
+/* NAVIGATION LINKS */
+
+.hero-nav a {
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(-10px);
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* stagger links */
+
+.hero-nav a:nth-child(1) {
+  animation: navReveal 0.6s ease 0.45s forwards;
+}
+
+.hero-nav a:nth-child(2) {
+  animation: navReveal 0.6s ease 0.55s forwards;
+}
+
+.hero-nav a:nth-child(3) {
+  animation: navReveal 0.6s ease 0.65s forwards;
+}
+
+.hero-nav a:nth-child(4) {
+  animation: navReveal 0.6s ease 0.75s forwards;
+}
+
+.hero-nav a:nth-child(5) {
+  animation: navReveal 0.6s ease 0.85s forwards;
+}
+
+
+/* underline */
+
+.hero-nav a::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background: #ffffff;
+
+  transform: translateX(-50%);
+
+  transition: width 0.35s ease;
+}
+
+.hero-nav a:hover {
+  transform: translateY(-2px);
+}
+
+.hero-nav a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content h1 {
+  opacity: 0;
+  transform: translateY(35px);
+
+  animation: titleReveal 0.9s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.55s forwards;
+}
+
+
+/* FIND A CAR */
+
+.find-car-btn {
+  opacity: 0;
+  transform: translateY(25px);
+
+  animation: buttonReveal 0.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.8s forwards;
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.35s ease;
+}
+
+.find-car-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.find-car-btn:active {
+  transform: translateY(-1px) scale(0.97);
+}
+
+
+/* =========================
+   SLIDER
+========================= */
+
+.hero-slider {
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: sliderReveal 0.8s ease 1s forwards;
+}
+
+.slider-line {
+  transition:
+    width 0.4s ease,
+    opacity 0.4s ease,
+    background-color 0.4s ease;
+}
+
+
+/* active slider animation */
+
+.slider-line.active {
+  animation: activeSlider 2.5s ease-in-out infinite;
+}
+
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes headerSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes logoReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+@keyframes navReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes titleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes buttonReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes sliderReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes activeSlider {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .leasing-hero,
+  .hero-overlay,
+  .hero-header,
+  .logo,
+  .hero-nav a,
+  .hero-content h1,
+  .find-car-btn,
+  .hero-slider,
+  .slider-line.active {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+/* ==================================================
+   WHY LEASE — SMOOTH REAL 3D + SMALL WOBBLE
+   DELETE THE OLD 3D CODE FIRST
+================================================== */
+
+.lease-benefits {
+  perspective: 1400px;
+  perspective-origin: 50% 45%;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.benefit-card {
+  position: relative;
+
+  padding: 30px 24px 34px;
+
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 18px;
+
+  transform-style: preserve-3d;
+  transform-origin: center center;
+
+  transform:
+    translate3d(0, 0, 0)
+    rotateX(0deg)
+    rotateY(0deg);
+
+  rotate: 0deg;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 1.05s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 1.05s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.7s ease;
+
+  will-change: transform;
+}
+
+
+/* =========================
+   FAKE PHYSICAL BACK LAYER
+   THIS CREATES THICKNESS
+========================= */
+
+.benefit-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  border-radius: 18px;
+
+  background: #e8e3da;
+  border: 1px solid #d3cec5;
+
+  transform:
+    translate3d(10px, 12px, -18px);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.7s ease,
+    transform 1.05s cubic-bezier(0.16, 1, 0.3, 1);
+
+  pointer-events: none;
+}
+
+
+/* subtle blue surface */
+.benefit-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 117, 255, 0.04),
+      transparent 45%
+    );
+
+  opacity: 0;
+
+  transform: translateZ(2px);
+
+  transition: opacity 0.8s ease;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   ACTUAL 3D HOVER
+========================= */
+
+.benefit-card:nth-child(1):hover {
+  transform:
+    translate3d(0, -12px, 42px)
+    rotateX(7deg)
+    rotateY(9deg);
+}
+
+.benefit-card:nth-child(2):hover {
+  transform:
+    translate3d(0, -12px, 42px)
+    rotateX(7deg)
+    rotateY(5deg);
+}
+
+.benefit-card:nth-child(3):hover {
+  transform:
+    translate3d(0, -12px, 42px)
+    rotateX(7deg)
+    rotateY(-5deg);
+}
+
+.benefit-card:nth-child(4):hover {
+  transform:
+    translate3d(0, -12px, 42px)
+    rotateX(7deg)
+    rotateY(-9deg);
+}
+
+
+.benefit-card:hover {
+  border-color: #8db7ff;
+
+  box-shadow:
+    0 30px 50px rgba(0, 0, 0, 0.14),
+    0 12px 28px rgba(0, 105, 255, 0.08);
+
+  /* ONE small wobble */
+  animation:
+    leaseCardWobble 0.85s
+    ease-in-out
+    0.42s
+    1;
+}
+
+
+.benefit-card:hover::before {
+  opacity: 1;
+
+  transform:
+    translate3d(14px, 16px, -24px);
+}
+
+
+.benefit-card:hover::after {
+  opacity: 1;
+}
+
+
+/* =========================
+   CARD WOBBLE
+   IMPORTANT:
+   uses "rotate", NOT transform
+   so it does not break the 3D transition
+========================= */
+
+@keyframes leaseCardWobble {
+
+  0% {
+    rotate: 0deg;
+  }
+
+  25% {
+    rotate: -0.7deg;
+  }
+
+  45% {
+    rotate: 0.55deg;
+  }
+
+  63% {
+    rotate: -0.35deg;
+  }
+
+  80% {
+    rotate: 0.18deg;
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+}
+
+
+/* =========================
+   ICON CIRCLE
+========================= */
+
+.benefit-icon {
+  position: relative;
+
+  transform-style: preserve-3d;
+
+  transform:
+    translate3d(0, 0, 18px);
+
+  transition:
+    transform 1.05s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 1.05s cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: transform;
+}
+
+
+/* inner ring */
+
+.benefit-icon::before {
+  transform:
+    translate3d(0, 0, 14px);
+
+  transition:
+    transform 1.05s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.9s ease;
+}
+
+
+/* ACTUAL ICON IMAGE */
+
+.benefit-icon img {
+  position: relative;
+  z-index: 5;
+
+  transform:
+    translate3d(0, 0, 30px)
+    scale(1);
+
+  transition:
+    transform 1.05s cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: transform;
+}
+
+
+/* icon physically comes out of card */
+
+.benefit-card:hover .benefit-icon {
+  transform:
+    translate3d(0, -8px, 72px)
+    scale(1.055);
+
+  box-shadow:
+    0 22px 35px rgba(0, 0, 0, 0.13),
+    0 8px 22px rgba(0, 110, 255, 0.13);
+}
+
+
+.benefit-card:hover .benefit-icon::before {
+  transform:
+    translate3d(0, 0, 30px)
+    scale(1.08);
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.09);
+}
+
+
+.benefit-card:hover .benefit-icon img {
+  transform:
+    translate3d(0, 0, 58px)
+    scale(1.16);
+}
+
+
+/* =========================
+   TITLE DEPTH
+========================= */
+
+.benefit-card h3 {
+  position: relative;
+
+  transform:
+    translate3d(0, 0, 16px);
+
+  transition:
+    transform 1.05s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.7s ease;
+
+  will-change: transform;
+}
+
+
+.benefit-card:hover h3 {
+  transform:
+    translate3d(0, -3px, 48px);
+
+  color: #0874ff;
+}
+
+
+/* =========================
+   PARAGRAPH DEPTH
+========================= */
+
+.benefit-card p {
+  position: relative;
+
+  transform:
+    translate3d(0, 0, 8px);
+
+  transition:
+    transform 1.05s cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: transform;
+}
+
+
+.benefit-card:hover p {
+  transform:
+    translate3d(0, -2px, 28px);
+}
+
+
+/* =========================
+   MAKE RETURN SMOOTH
+========================= */
+
+.benefit-card:not(:hover) {
+  rotate: 0deg;
+}
+
+
+/* =========================
+   GPU SMOOTHING
+========================= */
+
+.benefit-card,
+.benefit-card::before,
+.benefit-icon,
+.benefit-icon::before,
+.benefit-icon img,
+.benefit-card h3,
+.benefit-card p {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .benefit-card:nth-child(n):hover {
+    transform:
+      translate3d(0, -7px, 20px)
+      rotateX(4deg)
+      rotateY(3deg);
+  }
+
+  .benefit-card:hover .benefit-icon {
+    transform:
+      translate3d(0, -5px, 40px)
+      scale(1.035);
+  }
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .benefit-card,
+  .benefit-card::before,
+  .benefit-card::after,
+  .benefit-icon,
+  .benefit-icon::before,
+  .benefit-icon img,
+  .benefit-card h3,
+  .benefit-card p {
+    animation: none !important;
+    transition: none !important;
+  }
+}
